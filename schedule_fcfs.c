@@ -2,22 +2,23 @@
 
 void findWaitingTime(char *name, int n, int bt[], int wt[])
 {
-
+	int i;	
 	wt[0] = 0;
 
-	for (int i = 1; i < n; i++)
+	for (i = 1; i < n; i++)
 		wt[i] = bt[i - 1] + wt[i - 1];
 }
 
 void findTurnAroundTime(char *name, int n, int bt[], int wt[], int tat[])
 {
-	for (int i = 0; i < n; i++)
+	int i;
+	for (i = 0; i < n; i++)
 		tat[i] = bt[i] + wt[i];
 }
 
 void findavgTime(char *name, int n, int bt[])
 {
-	int wt[n], tat[n], total_wt = 0, total_tat = 0;
+	int wt[n], tat[n], total_wt = 0, total_tat = 0,i;
 
 	findWaitingTime(name, n, bt, wt);
 
@@ -25,7 +26,7 @@ void findavgTime(char *name, int n, int bt[])
 
 	printf("Processes Burst time Waiting time Turn around time\n");
 
-	for (int i = 0; i < n; i++)
+	for (i = 0; i < n; i++)
 	{
 		total_wt = total_wt + wt[i];
 		total_tat = total_tat + tat[i];

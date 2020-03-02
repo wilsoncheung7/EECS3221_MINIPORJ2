@@ -15,6 +15,7 @@ void findWaitingTime(char *name, int n, int bt[], int wt[])
     }
 
     avg_wt = (float)total / n;
+    printf("Average waiting time %d\n",avg_wt);
 }
 
 void findTurnAroundTime(char *name, int n, int p[], int bt[], int wt[], int tat[])
@@ -28,4 +29,5 @@ void findTurnAroundTime(char *name, int n, int p[], int bt[], int wt[], int tat[
     }
 
     avg_tat = (float)total / n;
+    printf("Average turnaround time %d\n",avg_tat);
 }
